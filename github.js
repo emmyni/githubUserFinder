@@ -15,7 +15,6 @@ class GitHub {
         const repos = await repoResponse.json();
 
         return {
-            // if you are writing profile: profile in ES6, you can just write profile
             profile,
             repos
         }

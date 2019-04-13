@@ -6,11 +6,11 @@ class UI {
     // display profile in ui
     showProfile(user) {
         this.profile.innerHTML = `
-            <div class="card card-body mb-2">
-                <div class-"row">
-                    <div class="col md-3">
-                        <img class-"img-fluid mb-2" src="${user.avatar_url}">
-                        <a href="${user.html_url} target="_blank class="btn btn-primary btn-block mb-4 mt-3">View Profile</a>
+            <div class="card card-body mb-2" style="width: 70%">
+                <div class="row">
+                    <div class="col md-3" style="padding-right:0">
+                        <img class="img-fluid img-thumbnail mb-2" src="${user.avatar_url}">
+                        <a href="${user.html_url}" target="_blank" class="btn btn-primary btn-block mb-4 mt-3">View Profile</a>
                     </div>
                     <div class="col md-9">
                         <span class="badge badge-primary">Public Repos: ${user.public_repos}</span>
@@ -19,8 +19,11 @@ class UI {
                         <span class="badge badge-info">Public Following: ${user.following}</span>
                         <br><br>
                         <ul class="list-group">
+                            <li class="list-group-item">Name:  ${user.name}</li>
+                            <li class="list-group-item">Bio:  ${user.bio}</li>
+                            <li class="list-group-item">Email:  ${user.email}</li>
                             <li class="list-group-item">Company:  ${user.company}</li>
-                            <li class="list-group-item">Website/Blog:  ${user.blog}</li>
+                            <li class="list-group-item">Website/Blog:  <a href="${user.blog}" target="_blank">${user.blog}</a></li>
                             <li class="list-group-item">Location:  ${user.location}</li>
                             <li class="list-group-item">Member Since:  ${user.created_at}</li>
                         </ul>
@@ -38,15 +41,18 @@ class UI {
 
         repos.forEach(function(repo) {
             output += `
-            <div class="card card-body mb-2">
+            <div class="card card-body mb-2" style="width: 70%">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-9">
                         <a href="${repo.html_url}" taget="_blank">${repo.name}</a>
+                        <span class="badge badge-info">${repo.language}</span>
+                        <div><p>Description: ${repo.description}</p></div>
                     </div>
-                    <div class="col-md-6">
-                        <span class="badge badge-primary">Stars: ${repo.stargazers_count}</span>
-                        <span class="badge badge-secondary">Watchers: ${repo.watchers_count}</span>
-                        <span class="badge badge-success">Forks: ${repos.forms_count}</span>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-2">
+                        <div><span class="badge badge-primary float-right m-2">Stars: ${repo.stargazers_count}</span></div>
+                        <div><span class="badge badge-secondary float-right m-2">Watchers: ${repo.watchers_count}</span></div>
+                        <div><span class="badge badge-success float-right m-2">Forks: ${repos.forms_count}</span></div>
                     </div>
                 </div>
             </div>
@@ -55,7 +61,8 @@ class UI {
 
         // output repos
         document.getElementById('repos').innerHTML = output;
-    }
+    };
+
 // show alert message
     showAlert(message, className) {
         // clear any remaining alerts
