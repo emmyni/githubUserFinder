@@ -5,27 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.2.1/cerulean/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>GitHub User Finder</title>
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-primary mb-3">
-        <div class="container">
-            <a href="#" class="navbar-brand">GitHub User Finder</a>
+    <div class="all-content">
+        <div class="info-content">
+            <nav class="navbar navbar-dark bg-primary mb-3 sticky-top">
+                <div class="container">
+                    <a href="#" class="navbar-brand"><i class="fab fa-github"></i>  GitHub User Finder</a>
+                </div>
+            </nav>
+            <div class="container search-container">
+                <div class="search card card-body">
+                    <h1 class="text-center">Search GitHub Users  <i class="fab fa-github-square"></i></h1>
+                    <p class="lead">Enter an Username to see their profile and repos</p>
+                    <input type="text" id="searchUser" class="form-control" placeholder="GitHub Username">
+                </div>
+                <br>
+                <div id="profile"></div>
+            </div>
         </div>
-    </nav>
-    <div class="container searchContainer">
-        <div class="search card card-body" style="width: 70%">
-            <h1>Search GitHub Users</h1>
-            <p class="lead">Enter a Username to fetch a user profile and repos</p>
-            <input type="text" id="searchUser" class="form-control" placeholder="GitHub Username">
-        </div>
-        <br>
-        <div id="profile"></div>
+
+        <footer class="mt-5 p-3 text-center bg-light page-footer">
+            GitHub &copy;
+        </footer>
     </div>
 
-    <footer class="mt-5 p-3 text-center bg-light">
-        GitHub Finder &copy;
-    </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -36,3 +42,22 @@
 
 </body>
 </html>
+
+<style>
+    .card {
+        width: 70%
+    }
+    .all-content {
+        position: relative;
+        min-height: 100vh;
+    }
+    .info-content {
+        padding-bottom: 2.5rem;    
+    }
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 2.5rem;        
+    }
+</style>
