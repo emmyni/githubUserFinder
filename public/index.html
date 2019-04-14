@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.2.1/litera/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>GitHub User Finder</title>
+</head>
+<body>
+    <div class="all-content">
+        <div class="info-content">
+            <nav class="navbar navbar-dark bg-primary mb-3 sticky-top">
+                <div class="container">
+                    <strong><a href="#" class="navbar-brand"><i class="fab fa-github"></i>  GitHub User Finder</a></strong>
+                </div>
+            </nav>
+            <div class="container">
+                <div class="row">
+                    <div class="container search-container col-9">
+                        <div class="search card card-body">
+                            <h1>Search GitHub Users  <i class="fab fa-github-square"></i></h1>
+                            <p class="lead">Enter an Username to see their profile and repos</p>
+                            <div>
+                                <input type="text" id="searchUser" class="form-control input" placeholder="GitHub Username">
+                                <span><button type="button" class="btn btn-outline-warning" onclick="clickFav()">Add to Favourites</span>
+                            </div>
+                            <div><p id="message"></p></div>
+                        </div>
+                        <br>
+                        <div id="profile"></div>
+                    </div>
+                    <div class="container starred col-3">
+                        <div class="search card card-body">
+                            <h3>Favourites</h3>
+                            <div id="fav">You currently have no favourite users.</div>
+                            <ul id="fav-list"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-5 p-3 text-center bg-light page-footer">
+            GitHub &copy;
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="github.js"></script>
+    <script src="ui.js"></script>
+    <script src="app.js"></script>
+    
+</body>
+</html>
+
+<style>
+    .all-content {
+        position: relative;
+        min-height: 100vh;
+    }
+    .info-content {
+        padding-bottom: 2.5rem;    
+    }
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 2.5rem;        
+    }
+    .input {
+        width: 79%;
+        display: inline-block;
+    }
+    button {
+        width: 20%;
+    }
+    #fav-list {
+        width: 90%;
+    }
+    #delete {
+        width: 9%;
+    }
+    h3, #fav {
+        text-align: center;
+    }
+</style>
