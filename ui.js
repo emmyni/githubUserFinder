@@ -6,17 +6,17 @@ class UI {
     // display profile in ui
     showProfile(user) {
         this.profile.innerHTML = `
-            <div class="card card-body mb-2" style="width: 70%">
+            <div class="card card-body container mb-2">
                 <div class="row">
-                    <div class="col md-3" style="padding-right:0">
-                        <img class="img-fluid img-thumbnail mb-2" src="${user.avatar_url}">
-                        <a href="${user.html_url}" target="_blank" class="btn btn-primary btn-block mb-4 mt-3">View Profile</a>
+                    <div class="col-6 md-3" style="padding-right:0">
+                        <img class="img-thumbnail mb-2" style="width:75%; height:75%" src="${user.avatar_url}">
+                        <a href="${user.html_url}" target="_blank" class="btn btn-primary btn-block mb-4 mt-3" style="width:75%">View Profile</a>
                     </div>
-                    <div class="col md-9">
-                        <span class="badge badge-primary">Public Repos: ${user.public_repos}</span>
-                        <span class="badge badge-secondary">Public Gists: ${user.public_gists}</span>
-                        <span class="badge badge-success">Public Followers: ${user.followers}</span>
-                        <span class="badge badge-info">Public Following: ${user.following}</span>
+                    <div class="col-6 md-9">
+                        <span class="badge badge-primary" style="margin:0.25rem">Public Repos: ${user.public_repos}</span>
+                        <span class="badge badge-secondary" style="margin:0.25rem">Public Gists: ${user.public_gists}</span>
+                        <span class="badge badge-success" style="margin:0.25rem">Public Followers: ${user.followers}</span>
+                        <span class="badge badge-info" style="margin:0.25rem">Public Following: ${user.following}</span>
                         <br><br>
                         <ul class="list-group">
                             <li class="list-group-item">Name:  ${user.name}</li>
@@ -41,9 +41,9 @@ class UI {
 
         repos.forEach(function(repo) {
             output += `
-            <div class="card card-body mb-2" style="width: 70%">
+            <div class="card card-body mb-2">
                 <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-md-9 col-9">
                         <a href="${repo.html_url}" taget="_blank">${repo.name}</a>
                         <span class="badge badge-info">${repo.language}</span>
                         <div><p>Description: ${repo.description}</p></div>
