@@ -24,8 +24,9 @@
                             <p class="lead">Enter an Username to see their profile and repos</p>
                             <div>
                                 <input type="text" id="searchUser" class="form-control input" placeholder="GitHub Username">
-                                <span><button type="button" class="btn btn-outline-warning" onclick="clickFav()"><i class="fas fa-star"></i></button></span>
+                                <span><button type="button" class="btn btn-outline-warning" onclick="clickFav()">Add to Favourites</span>
                             </div>
+                            <div><p id="message"></p></div>
                         </div>
                         <br>
                         <div id="profile"></div>
@@ -53,38 +54,7 @@
     <script src="github.js"></script>
     <script src="ui.js"></script>
     <script src="app.js"></script>
-    <!-- <script>
-        function viewUser(userName) {
-            console.log('click');
-            document.getElementById("searchUser").value = userName;
-        }
-        // function clickFav() {
-        //     let userName = document.getElementById("searchUser").value
-        //     if (userName !== '') {
-        //         // document.getElementById("fav").innerText = '';
-        //         // let ul = document.getElementById("fav-list");
-        //         // let li = document.createElement("li");
-        //         // let children = ul.children.length + 1
-        //         // li.setAttribute("id", "element"+children)
-        //         // li.appendChild(document.createTextNode(userName));
-        //         // li.addEventListener("click". viewUser(userName))
-        //         // ul.appendChild(li)
-        //     }
-        // }
-        function clickFav() {
-            let userName = document.getElementById("searchUser").value;
-            document.getElementById("fav").innerText = '';
-            document.getElementById("fav").innerText = '';
-            $('#fav-list').delegate('li','click', react);
-            $('#fav-list').append(`<li>${userName}</li>`);
-            $("#searchUser").keyup();
-        }
-       
-        function react() {
-            document.getElementById("searchUser").value = $(this).text();
-        }
-                    // document.getElementById("view").addEventListener("click", viewUser(userName));
-    </script> -->
+    
 </body>
 </html>
 
@@ -103,7 +73,16 @@
         height: 2.5rem;        
     }
     .input {
-        width: 90%;
+        width: 79%;
         display: inline-block;
+    }
+    button {
+        width: 20%;
+    }
+    #fav-list {
+        width: 90%;
+    }
+    #delete {
+        width: 9%;
     }
 </style>
