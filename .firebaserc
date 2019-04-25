@@ -1,5 +1,6 @@
 {
   "projects": {
-    "find": "github-userfinder"
+    "find": "github-userfinder",
+    "default": "github-userfinder"
   }
 }
